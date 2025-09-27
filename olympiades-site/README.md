@@ -1,70 +1,262 @@
-# Getting Started with Create React App
+# 🏆 Site Web des Olympiades Mathématiques et Physique
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 Description
 
-## Available Scripts
+Site web complet pour l'organisation des Olympiades Mathématiques et Physique destinées aux étudiants de Licence 1 et 2 au Cameroun. Le site propose une plateforme moderne et responsive pour l'inscription, la gestion des épreuves et le suivi des participants.
 
-In the project directory, you can run:
+## 🎨 Design et Couleurs
 
-### `npm start`
+- **Couleurs dominantes** : Vert, Rouge, Jaune
+- **Style** : Moderne, professionnel, non surbrillant
+- **Responsive** : Adapté mobile, tablette et desktop
+- **Framework** : React.js avec Styled Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Accès au Site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Développement
+```bash
+cd olympiades-site
+npm start
+```
+- **Local** : http://localhost:3000
+- **Réseau** : http://192.168.96.68:3000
 
-### `npm test`
+### Production
+```bash
+npm run build
+npm install -g serve
+serve -s build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔐 Accès à la Page Admin
 
-### `npm run build`
+### URL d'accès
+```
+http://localhost:3000/admin
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Fonctionnalités Admin
+- **Tableau de bord** avec statistiques clés
+- **Métriques** : Participants actifs, taux de satisfaction, revenus potentiels
+- **Graphiques** : Évolution des inscriptions, répartition par université
+- **Export** : Données et rapports
+- **Monétisation** : Analyse des revenus et performance
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏗️ Architecture Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Structure des Dossiers
+```
+src/
+├── components/          # Composants réutilisables
+│   └── Layout/         # Header, Footer, Layout principal
+├── pages/              # Pages de l'application
+├── data/               # Données centralisées
+│   └── siteData.js     # Configuration et contenu
+├── styles/             # Thème et styles globaux
+│   ├── theme.js        # Palette de couleurs et variables
+│   └── GlobalStyles.js # Styles CSS globaux
+└── utils/              # Utilitaires et helpers
+```
 
-### `npm run eject`
+### Gestion des Données
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Fichier Central : `src/data/siteData.js`
+Toutes les données du site sont centralisées dans ce fichier pour faciliter la maintenance :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+export const siteConfig = {
+  title: "Olympiades Mathématiques et Physique",
+  contact: { email, phone, address },
+  social: { facebook, twitter, linkedin }
+};
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+export const aboutData = {
+  history: { title, content },
+  values: { title, values: [...] },
+  sponsors: { title, sponsors: [...] }
+};
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export const testData = {
+  mathematics: { subjects: [...] },
+  physics: { subjects: [...] }
+};
 
-## Learn More
+export const programData = {
+  currentYear: 2025,
+  schedule: { "2025": { phases: [...] } }
+};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Système de Thème
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Configuration : `src/styles/theme.js`
+```javascript
+export const theme = {
+  colors: {
+    primary: { green, lightGreen, darkGreen },
+    secondary: { red, lightRed, darkRed },
+    accent: { yellow, lightYellow, darkYellow },
+    neutral: { white, gray50-900 }
+  },
+  spacing: { xs, sm, md, lg, xl, '2xl', '3xl' },
+  breakpoints: { mobile, tablet, desktop, wide },
+  shadows: { sm, md, lg, xl, '2xl' }
+};
+```
 
-### Code Splitting
+### Composants Styled
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Tous les composants utilisent Styled Components avec le thème :
+```javascript
+const StyledComponent = styled.div`
+  color: ${theme.colors.primary.green};
+  padding: ${theme.spacing.lg};
+  background: ${theme.colors.neutral.white};
+  border-radius: ${theme.borderRadius.lg};
+  box-shadow: ${theme.shadows.md};
+`;
+```
 
-### Analyzing the Bundle Size
+## 📱 Pages et Fonctionnalités
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 1. Page d'Accueil (`/`)
+- **Hero section** avec call-to-action
+- **Statistiques** des années précédentes
+- **Fonctionnalités** principales
+- **Design** : Gradient vert-jaune
 
-### Making a Progressive Web App
+### 2. À Propos (`/about`)
+- **Histoire** des Olympiades
+- **Valeurs** de l'organisation
+- **Sponsors** et partenaires
+- **Contact** et informations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 3. Épreuves (`/tests`)
+- **Mathématiques** et **Physique**
+- **Sujets** des années précédentes
+- **Simulation** d'épreuves
+- **Téléchargement** des documents
 
-### Advanced Configuration
+### 4. Inscriptions (`/registration`)
+- **Formulaire** complet d'inscription
+- **Validation** des données
+- **Redirection** vers l'espace participant
+- **Gestion** des erreurs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 5. Programme (`/program`)
+- **Timeline** interactive 2025
+- **Phases** détaillées
+- **Dates** importantes
+- **Statuts** des événements
 
-### Deployment
+### 6. Résultats (`/results`)
+- **Lauréats** des années précédentes
+- **Classements** par matière
+- **Universités** participantes
+- **Statistiques** de participation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 7. Galerie (`/gallery`)
+- **Photos** des événements
+- **Moments** marquants
+- **Cérémonies** et remises de prix
+- **Interface** moderne
 
-### `npm run build` fails to minify
+### 8. Espace Participant (`/participant`)
+- **Simulation** d'épreuves
+- **Tests** en ligne
+- **Résultats** personnels
+- **Analyse** de performance
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 9. Administration (`/admin`)
+- **Tableau de bord** avancé
+- **Métriques** en temps réel
+- **Graphiques** interactifs
+- **Export** de données
+
+## 🔧 Configuration et Déploiement
+
+### Variables d'Environnement
+Créer un fichier `.env` :
+```env
+REACT_APP_API_URL=http://localhost:3001/api
+REACT_APP_ADMIN_EMAIL=admin@olympiades.cm
+REACT_APP_ANALYTICS_ID=GA_TRACKING_ID
+```
+
+### Scripts Disponibles
+```bash
+npm start          # Développement
+npm run build      # Production
+npm test           # Tests
+npm run eject      # Eject (irréversible)
+```
+
+### Dépendances Principales
+```json
+{
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-router-dom": "^6.8.0",
+  "styled-components": "^5.3.6",
+  "lucide-react": "^0.263.1",
+  "framer-motion": "^10.0.0",
+  "recharts": "^2.5.0"
+}
+```
+
+## 📊 Fonctionnalités Backend Avancées
+
+### Gestion des Utilisateurs
+- **Inscription** avec validation
+- **Authentification** (à implémenter)
+- **Profils** utilisateurs
+- **Historique** des épreuves
+
+### Système d'Épreuves
+- **Création** de sujets
+- **Gestion** des questions
+- **Correction** automatique
+- **Notation** et classement
+
+### Analytics et Reporting
+- **Métriques** de performance
+- **Statistiques** d'utilisation
+- **Rapports** personnalisés
+- **Export** de données
+
+### Monétisation
+- **Analyse** des revenus
+- **Partenariats** sponsorisés
+- **Publicité** ciblée
+- **Abonnements** premium
+
+## 🛠️ Maintenance et Évolution
+
+### Ajout de Contenu
+1. Modifier `src/data/siteData.js`
+2. Redémarrer le serveur de développement
+3. Vérifier l'affichage
+
+### Modification du Design
+1. Ajuster `src/styles/theme.js`
+2. Modifier les composants si nécessaire
+3. Tester la responsivité
+
+### Ajout de Pages
+1. Créer le composant dans `src/pages/`
+2. Ajouter la route dans `src/App.js`
+3. Mettre à jour la navigation
+
+## 📞 Support et Contact
+
+- **Email** : contact@olympiades.cm
+- **Téléphone** : +237 XXX XX XX XX
+- **Adresse** : Université de Yaoundé I, Cameroun
+
+## 📄 Licence
+
+© 2025 Olympiades Mathématiques et Physique. Tous droits réservés.
+
+---
+
+**Développé avec ❤️ pour promouvoir l'excellence académique au Cameroun**
