@@ -18,7 +18,7 @@ export const siteConfig = {
 export const aboutData = {
   history: {
     title: "Notre Histoire",
-    content: "Les Olympiades Mathématiques et Physique ont été créées en 2025 pour promouvoir l'excellence académique et stimuler la passion pour les sciences exactes chez les étudiants universitaires camerounais. Cette initiative vise à créer un environnement compétitif sain qui encourage l'apprentissage et l'innovation dans les domaines des mathématiques et de la physique."
+    content: "Les Olympiades Mathématiques et Physique sont nées en 2025 de l’initiative d’un groupe d’élèves polytechniciens camerounais animés par une même vision : promouvoir l’excellence académique et raviver la passion pour les sciences exactes au sein de la jeunesse universitaire de notre pays. À travers ce projet, nous souhaitons offrir un cadre compétitif, bienveillant et stimulant où les talents peuvent s’exprimer, se dépasser et collaborer. Notre ambition est de contribuer au rayonnement scientifique du Cameroun en inspirant une nouvelle génération d’esprits rigoureux, curieux et innovants."
   },
   values: {
     title: "Nos Valeurs",
@@ -38,6 +38,18 @@ export const aboutData = {
       {
         title: "Innovation",
         description: "Nous encourageons la créativité et l'innovation dans la résolution de problèmes scientifiques complexes."
+      },
+      {
+        title: "Persévérance",
+        description: "Nous valorisons la détermination et l'effort constants face aux défis intellectuels, convaincus que la réussite scientifique naît de la persistance et du travail acharné."
+      },
+      {
+        title: "Esprit scientifique",
+        description: "Nous encourageons la réflexion critique, le questionnement et la recherche de solutions fondées sur la logique et l’observation."
+      },
+      {
+        title: "Curiosité",
+        description: "Nous cultivons la curiosité intellectuelle et l'envie de comprendre le monde à travers les mathématiques et la physique."
       }
     ]
   },
@@ -45,19 +57,9 @@ export const aboutData = {
     title: "Nos Sponsors",
     sponsors: [
       {
-        name: "Ministère de l'Enseignement Supérieur",
+        name: "Anciens élèves de l'école polytechnique",
         logo: "/images/sponsors/ministere.png",
-        description: "Soutien institutionnel principal"
-      },
-      {
-        name: "Université de Yaoundé I",
-        logo: "/images/sponsors/uy1.png",
-        description: "Université hôte et partenaire académique"
-      },
-      {
-        name: "Fondation pour l'Éducation",
-        logo: "/images/sponsors/fondation.png",
-        description: "Soutien financier et logistique"
+        description: "Soutien financier et logistique principal"
       }
     ]
   }
