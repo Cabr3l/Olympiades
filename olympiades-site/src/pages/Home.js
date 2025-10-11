@@ -240,14 +240,22 @@ const features = [
     icon: BookOpen,
     title: 'Ressources d\'Apprentissage',
     description: 'Accédez à des ressources pédagogiques et des sujets des années précédentes.'
+  },
+  {
+    icon: Trophy,
+    title: 'Des prix ayant une valeur de plus de 1000€',
+    description: ' Ordinateurs dernier cri, Smartphones, Sacs à dos, Imprimantes'
+  },
+  {icon: Users,
+   title: 'Démocratiser les sciences',
+   description: 'Devenez ambassadeurs des olympiades polytechniciennes et partagez les sciences dans vos communautés' 
   }
 ];
 
 const stats = [
-  { number: '150+', label: 'Participants 2024' },
-  { number: '95%', label: 'Taux de Satisfaction' },
-  { number: '8', label: 'Universités Partenaires' },
-  { number: '50+', label: 'Professeurs Impliqués' }
+  { number: '2', label: 'Organisation des olympiades dans 2 villes camerounaises' },
+  { number: '20', label: 'Universités participantes' },
+  { number: '15', label: 'Sponsors personnels' }
 ];
 
 const Home = () => {
@@ -271,7 +279,7 @@ const Home = () => {
 
       <StatsSection>
         <div className="container">
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem', color: theme.colors.primary.green, fontSize: '2.5rem', fontWeight: '700' }}>Nos Résultats</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: '2rem', color: theme.colors.primary.green, fontSize: '2.5rem', fontWeight: '700' }}>Première édition des olympiades polytechniciennes</h2>
           <StatsGrid>
             {stats.map((stat, index) => (
               <StatItem key={index}>

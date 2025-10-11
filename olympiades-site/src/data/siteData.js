@@ -1,12 +1,12 @@
 // Données centralisées du site - Facilement éditables
 export const siteConfig = {
-  title: "Olympiades Mathématiques et Physique",
+  title: "Olympiades Polytechniciennes",
   subtitle: "Défiez vos limites, explorez l'excellence académique",
   description: "Compétition académique d'excellence pour les étudiants de Licence 1 et 2 en Mathématiques et Physique au Cameroun",
   contact: {
     email: "contact@olympiades.cm",
     phone: "+237 XXX XX XX XX",
-    address: "Université de Yaoundé I, Cameroun"
+    address: "Ecole polytechnique, Paris, France"
   },
   social: {
     facebook: "https://facebook.com/olympiades-cm",

@@ -215,7 +215,7 @@ const Footer = () => {
       </FooterContent>
 
       <FooterBottom>
-        <p>&copy; 2025 Olympiades Mathématiques et Physique. Tous droits réservés.</p>
+        <p>&copy; 2025 Olympiades polytechniciennes. Tous droits réservés.</p>
         <p>Fait avec <Heart size={16} color={theme.colors.secondary.red} /> au Cameroun</p>
       </FooterBottom>
     </FooterContainer>
